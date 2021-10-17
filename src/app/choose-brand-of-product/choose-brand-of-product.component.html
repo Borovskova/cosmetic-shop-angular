@@ -1,0 +1,35 @@
+
+  <button mat-button color="primary" (click)="showList()">Favorite Brands  &nbsp;<mat-icon style="cursor: pointer;">expand_more</mat-icon></button>
+ 
+  <div style="position:relative">
+  <mat-form-field *ngIf="isListVisible" class="example-chip-list" appearance="fill">
+    <mat-label>Favorite Brands</mat-label>
+    <mat-chip-list  #chipList aria-label="Mascara selection">
+      <mat-chip class="mat-chip-item"
+        *ngFor="let mascara of mascaras"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(mascara)">
+        {{mascara}}
+        <button matChipRemove *ngIf="removable">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input
+        placeholder="Choose brand"
+        #mascaraInput
+        [formControl]="mascaraCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="add($event)">
+        <button mat-button color="primary" style="float: right;" (click)="this.filtered_goods.searchFilteredGoods(this.mascaras)">Filter &nbsp;<mat-icon>search</mat-icon></button>
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let mascara of filteredMascara | async" [value]="mascara">
+        {{mascara}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+  

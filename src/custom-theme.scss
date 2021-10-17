@@ -1,0 +1,44 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$shop-primary: mat.define-palette(mat.$blue-gray-palette);
+$shop-accent: mat.define-palette(mat.$green-palette);
+$shop-warn: mat.define-palette(mat.$red-palette);
+
+$shop-theme: mat.define-light-theme((
+  color: (
+    primary: $shop-primary,
+    accent: $shop-accent,
+    warn: $shop-warn,
+  )
+));
+@include mat.all-component-themes($shop-theme);
+
+//for dark theme
+$shop-primary-dark: mat.define-palette(mat.$orange-palette);
+$shop-accent-dark: mat.define-palette(mat.$yellow-palette);
+$shop-warn-dark: mat.define-palette(mat.$red-palette);
+
+$shop-theme-dark: mat.define-dark-theme((
+  color: (
+    primary: $shop-primary-dark,
+    accent: $shop-accent-dark,
+    warn: $shop-warn-dark,
+  )
+));
+
+.dark-theme-mode{
+  
+  @include mat.all-component-themes($shop-theme-dark);
+}

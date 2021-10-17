@@ -1,0 +1,22 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+ .wrap{
+      text-align: -webkit-center;
+      margin-top: 100px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .notifier-background{
+    background-color: white;
+    opacity: 0.3;
+  }

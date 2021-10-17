@@ -1,0 +1,10 @@
+.example-chip-list {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: -20px;
+    z-index: 1;
+  }
+  .mat-chip-item{
+display: inline;
+  }

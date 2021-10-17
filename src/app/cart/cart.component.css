@@ -1,0 +1,25 @@
+img{
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+.example-card{
+    max-width: 700px;
+    margin-top: 50px;
+}
+tr, th, td {
+    text-align: center;
+}
+tr:hover{
+    background: #607d8b;
+    text-emphasis-color: white;
+}
+tr:hover :nth-child(n)  {
+    color: white;
+  }
+  .delete-one-item{
+      color: #f44336!important;
+      font-size: 30px;
+  }
+ td, th{
+     color: gray;
+ }

@@ -1,0 +1,34 @@
+[
+    {
+        "imageName": "makeup1",
+        "title": "By and get 50% sale on all ink 'Lancome'",
+        "handsetCols": 2,
+        "handsetRows": 1,
+        "webCols": 2,
+        "webRows": 1
+    },
+    {
+        "imageName": "makeup2",
+        "title": "By 2 pomades get 3",
+        "handsetCols": 2,
+        "handsetRows": 1,
+        "webCols": 1,
+        "webRows": 1
+    },
+    {
+        "imageName": "makeup3",
+        "title": "Last unit of eyeshadow",
+        "handsetCols": 2,
+        "handsetRows": 1,
+        "webCols": 1,
+        "webRows": 2
+    },
+    {
+        "imageName": "makeup4",
+        "title": "10% off on all powder",
+        "handsetCols": 2,
+        "handsetRows": 1,
+        "webCols": 1,
+        "webRows": 1
+    }
+]

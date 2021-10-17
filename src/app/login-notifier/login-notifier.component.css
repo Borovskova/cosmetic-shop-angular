@@ -1,0 +1,19 @@
+div {
+    position: relative;
+}
+
+.example-card {
+    position: absolute;
+    top: 220px;
+    left: 31.5%;
+    z-index: 2;
+    max-width: 400px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.mat-card-title {
+    color: red;
+    width: 400px;
+    margin: auto;
+}

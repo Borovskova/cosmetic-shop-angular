@@ -1,0 +1,17 @@
+<div>
+  <form>
+    <mat-form-field>
+      <input #goodsInput type="text" matInput placeholder="Select goods category" [matAutocomplete]="auto"
+        [formControl]="myControl">
+      <mat-icon role="button" (click)="removeValueInInput()" color="primary" style="cursor: pointer;" matSuffix>cancel
+      </mat-icon>
+      <mat-autocomplete #auto="matAutocomplete">
+
+        <!-- if use an array of objects [displayWith]="displayFn - it is atribute for mat-autocomplete" -->
+        <mat-option *ngFor="let category of filteredOptions | async" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>

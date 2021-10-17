@@ -1,0 +1,79 @@
+<!-- notifier -->
+<app-login-notifier *ngIf="this.auth.isNotifierVisible"></app-login-notifier>
+
+<!-- main-content -->
+<div class="wrap mat-app-background">
+    <mat-card class="example-card" [class.notifier-background]="this.auth.isNotifierVisible">
+        <mat-card-header>
+            <mat-card-title>Login/Signup</mat-card-title>
+            <mat-card-subtitle>Makeup Shop</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-tab-group>
+                <mat-tab label="Login">
+                    <form [formGroup]="loginForm">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input [(ngModel)]="loginUserData.email" name="email" type="email" formControlName="email"
+                                matInput placeholder="Email" value="">
+                            <small *ngIf="isWarnEmailVisible" style="color: red;">{{emailErrorText}}</small>
+                            <mat-icon color="primary" matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="loginUserData.password" name="password" type="password"
+                                [formControlName]="'password'" matInput placeholder="Password">
+                            <small *ngIf="isWarnPasswordVisible" style="color: red;">{{passwordErrorText}}</small>
+                            <mat-icon color="primary" matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                        <h1 *ngIf="this.auth.isUserLoggedIn">
+                            <mat-icon color="accent">check_circle_outline</mat-icon> <br> You are logged in!
+                        </h1>
+                        <button *ngIf="this.auth.isUserLoggedIn === false" [disabled]="!loginForm.valid"
+                            style="width: 100%;" (click)="login()" type="button" mat-flat-button
+                            color="primary">Login</button>
+                        <button *ngIf="this.auth.isUserLoggedIn" (click)="logout()"
+                            style="width: 100%; margin-top: 10px;" type="button" mat-flat-button
+                            color="warn">Logout</button>
+                    </form>
+                </mat-tab>
+
+
+                <mat-tab label="Signup">
+                    <form [formGroup]="signupForm">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input [(ngModel)]="registerUserData.email" (change)=" onChangeEmailInput()" name="email"
+                                type="email" [formControlName]="'email'" matInput placeholder="Email" value="">
+                            <small *ngIf="isWarnEmailVisible" style="color: red;">{{emailErrorText}}</small>
+                            <mat-icon color="primary" matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="registerUserData.password" name="password" type="password"
+                                (change)=" onChangePasswordInput()" [formControlName]="'password'" matInput
+                                placeholder="Password">
+                            <small *ngIf="isWarnPasswordVisible" style="color: red;">{{passwordErrorText}}</small>
+                            <mat-icon color="primary" matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Confirm Password</mat-label>
+                            <input [(ngModel)]="registerUserData.passwordConfirm" name="passwordConfirm" type="password"
+                                (change)="onChangePasswordInput()" [formControlName]="'passwordConfirm'" matInput
+                                placeholder="Confirm Password">
+                            <small *ngIf="isWarnPasswordConfirmVisible"
+                                style="color: red;">{{passwordErrorText}}</small>
+                            <small *ngIf="isWarnDiferentPasswordVisible" style="color: red;">Different
+                                passwords!</small>
+                            <mat-icon color="primary" matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                        <button [disabled]="!signupForm.valid" (click)="signup()" style="width: 100%;" mat-flat-button
+                            color="primary">Signup</button>
+                    </form>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>
