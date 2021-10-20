@@ -8,6 +8,7 @@ export class GoodsCategoryDataService {
 
   private guestMascaraUrl = "http://localhost:3001/api/guestMascara";
   private adminMascaraUrl = "http://localhost:3001/api/adminMascara";
+  private faceCareUrl = "http://localhost:3001/api/face-care";
 
 
   constructor(private http: HttpClient) { }
@@ -17,5 +18,8 @@ export class GoodsCategoryDataService {
   }
   getAdminMascaraUrl(){
     return this.http.get<any>(this.adminMascaraUrl);
+  }
+  getGuestFaceCareUrl(){
+    return this.http.get<any>(this.faceCareUrl);
   }
 }

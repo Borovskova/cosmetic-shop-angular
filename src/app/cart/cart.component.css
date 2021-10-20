@@ -23,3 +23,9 @@ tr:hover :nth-child(n)  {
  td, th{
      color: gray;
  }
+ img{
+    mix-blend-mode: multiply;
+  }
+  .goods-image{
+    mix-blend-mode: multiply;
+  }

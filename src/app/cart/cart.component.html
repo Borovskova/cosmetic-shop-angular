@@ -36,7 +36,7 @@
     <tbody style="position: relative;">
       <tr *ngFor="let product of   this.cartService.products; let i = index;">
         <td>{{i + 1}}</td>
-        <td><img src="{{'http://localhost:3000/images/' + product.imageName + '.png' }}"></td>
+        <td><img class="goods-image" src="{{'http://localhost:3000/images/' + product.imageName + '.png' }}"></td>
         <td>{{product.brand}}</td>
         <td>{{product.serries}}</td>
         <td style="font-weight: bold;">{{product.price}}$</td>

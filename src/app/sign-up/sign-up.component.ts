@@ -69,27 +69,25 @@ export class SignUpComponent implements OnInit {
   }
 
   login() {
+    console.log('work');
     this.auth.loginUser(this.loginUserData)
       .subscribe(
         response => {
           console.log(response);
-          // this.router.navigateByUrl('/body-care');
           this.auth.itemSignupMenuValue = 'Logout';
           this.auth.isUserLoggedIn = true;
           localStorage.setItem('isUserLoggedIn', "true");
           localStorage.setItem('password', this.loginUserData.password);
           localStorage.setItem('email', this.loginUserData.email);
           localStorage.setItem('itemSignupMenuValue', 'Logout');
-
         },
         error => {
-          console.log(error);
+          console.log('error' + error);
           this.auth.isNotifierVisible = true;
         }
-      )
-      console.log('work login');
-      
+      )  
   }
+
   logout() {
     this.auth.isUserLoggedIn = false;
     this.auth.itemSignupMenuValue = 'Login';

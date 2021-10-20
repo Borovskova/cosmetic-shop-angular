@@ -284,5 +284,106 @@ router.get('/adminMascara', (req, res) => {
     ];
     res.json(mascara);
 })
+router.get('/face-care', (req, res) => {
+    let faceCareGoods = [
+        {
+            "id":"1",
+            "name": "Cream for face",
+            "imgName":"creamBakground1",
+            "cols": "1",
+            "rows": "1"
+        },
+        {
+            "id":"2",
+            "name": "Micellar water",
+            "imgName":"micellarWaterBakground1",
+            "cols": "1",
+            "rows": "1"
+        },
+        {
+            "id":"3",
+            "name": "Lotion for face",
+            "imgName":"lotionBakground1",
+            "cols": "1",
+            "rows": "1"
+        },
+        {
+            "id":"4",
+            "name": "Shower face gel",
+            "imgName":"gelFaceBakground1",
+            "cols": "1",
+            "rows": "1"
+        },
+        {
+            "id":"5",
+            "name": "Shower face scrab",
+            "imgName":"gelFaceBakground1",
+            "cols": "1",
+            "rows": "1"
+        },
+        {
+            "id":"6",
+            "name": "Shower face foam",
+            "imgName":"faceFoamBakground1",
+            "cols": "1",
+            "rows": "1"
+        },
+     ];
+     res.json(faceCareGoods);
+})
+router.get('/guestCreams', (req, res) => {
+    let mascara = [
+        {
+            "id": "1",
+            "brand": "Lancome",
+            "country":"Made in: France",
+            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "2",
+            "brand": "Dior",
+            "country":"Made in: France",
+            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "3",
+            "brand": "Max factor",
+            "country":"Made in: France",
+            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "4",
+            "brand": "Loreal",
+            "country":"Made in: France",
+            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "5",
+            "brand": "Viviene Saabo",
+            "country":"Made in: France",
+            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "6",
+            "brand": "Maybelline",
+            "country":"Made in: France",
+            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "cols": "1",
+            "rows": "1",
+        },
+       
+    ];
+    res.json(mascara);
+})
 
 module.exports = router;
