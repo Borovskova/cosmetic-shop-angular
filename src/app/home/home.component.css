@@ -1,7 +1,11 @@
-.grid-container {
-  margin: 20px;
+img{
+  object-fit: contain;
+  max-width: 100%;
+  mix-blend-mode: multiply;
 }
-
+.grid-container{
+  padding: 20px;
+}
 .dashboard-card {
   position: absolute;
   top: 15px;
@@ -9,22 +13,20 @@
   right: 15px;
   bottom: 15px;
 }
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+.img-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
-.dashboard-card-content {
-  text-align: center;
-}
-.card-image{
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
+.mat-h1{
+    text-align: center;
 }
 .card-title{
-  padding-top: 10px;
-  border-radius: 6px;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  background-color: #607d8b;;
+}
+.mat-card-header .mat-card-title {
+  margin-bottom: 0;
 }

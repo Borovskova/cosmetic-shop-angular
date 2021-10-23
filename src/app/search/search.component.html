@@ -1,9 +1,9 @@
-<div>
+<div class="search-container">
   <form>
     <mat-form-field>
       <input #goodsInput type="text" matInput placeholder="Select goods category" [matAutocomplete]="auto"
         [formControl]="myControl">
-      <mat-icon role="button" (click)="removeValueInInput()" color="primary" style="cursor: pointer;" matSuffix>cancel
+      <mat-icon role="button" (click)="removeValueInInput()" color="primary" style="cursor: pointer;margin-right: 10px;" matSuffix>cancel
       </mat-icon>
       <mat-autocomplete #auto="matAutocomplete">
 

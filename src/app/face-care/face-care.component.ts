@@ -33,8 +33,4 @@ export class FaceCareComponent implements OnInit {
       }
     )
   }
-
-  getImage(img: string): string {
-    return 'url(' + 'http://localhost:3000/images/' + img + '.jpg)';
-  }
 }

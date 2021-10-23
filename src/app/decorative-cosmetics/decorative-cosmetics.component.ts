@@ -22,12 +22,12 @@ export class DecorativeCosmeticsComponent {
       }
 
       return [
-        { link: '/mascara', img: 'makeup8.jpg', title: 'Mascara', cols: 1, rows: 1 },
-        { link: '/mascara', img: 'makeup1.jpg', title: 'Face powder', cols: 1, rows: 1 },
-        { link: '/mascara', img: 'makeup5.jpg', title: 'Tone cream', cols: 1, rows: 1 },
-        { link: '/mascara', img: 'makeup3.jpg', title: 'Eyeshadows and Pomade', cols: 1, rows: 1 },
-        { link: '/mascara', img: 'makeup4.jpg', title: 'Tassels', cols: 1, rows: 1 },
-        { link: '/mascara', img: 'makeup7.jpg', title: 'Eyeliner', cols: 1, rows: 1 },
+        { link: '/dashboard/mascara', img: 'makeup8.jpg', title: 'Mascara', cols: 1, rows: 1 },
+        { link: '/dashboard/mascara', img: 'makeup1.jpg', title: 'Face powder', cols: 1, rows: 1 },
+        { link: '/dashboard/mascara', img: 'makeup5.jpg', title: 'Tone cream', cols: 1, rows: 1 },
+        { link: '/dashboard/mascara', img: 'makeup3.jpg', title: 'Eyeshadows and Pomade', cols: 1, rows: 1 },
+        { link: '/dashboard/mascara', img: 'makeup4.jpg', title: 'Tassels', cols: 1, rows: 1 },
+        { link: '/dashboard/mascara', img: 'makeup7.jpg', title: 'Eyeliner', cols: 1, rows: 1 },
       ];
     })
   );

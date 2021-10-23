@@ -75,14 +75,15 @@ export class SearchService {
       }
     });
     if (this.coincidence.toLowerCase() === this.goods[0].toLowerCase()) {
-      this.router.navigateByUrl('/dec-cos');
+      this.router.navigateByUrl('/dashboard/dec-cos');
     } else if (this.coincidence.toLowerCase() === this.goods[1].toLowerCase()) {
-      this.router.navigateByUrl('/face-care');
+      this.router.navigateByUrl('/dashboard/face-care');
     } else if (this.coincidence.toLowerCase() === this.goods[2].toLowerCase()) {
-      this.router.navigateByUrl('/body-care');
+      this.router.navigateByUrl('/dashboard/body-care');
     } else if (this.coincidence.toLowerCase() === this.goods[3].toLowerCase()) {
-      this.router.navigateByUrl('/hair-care');
+      this.router.navigateByUrl('/dashboard/hair-care');
     }
+    this.isVisibleSearchForm = false;
   }
   // public redirect(){
   //   this.router.navigateByUrl('/dec-cos');

@@ -3,17 +3,12 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home"><mat-icon color="primary" style="margin-right: 10px;">home</mat-icon>Home</a>
-      <a mat-list-item routerLink="/signup"><mat-icon color="primary" style="margin-right: 10px;">person</mat-icon>{{this.auth.itemSignupMenuValue}}</a>
-      <a  *ngIf="this.auth.isUserLoggedIn" mat-list-item routerLink="/cart"> <mat-icon color="primary" style="cursor: pointer; margin-right: 10px;"
+      <a mat-list-item routerLink="/dashboard/home"><mat-icon color="primary" style="margin-right: 10px;">home</mat-icon>Home</a>
+      <a mat-list-item (click)="logout()"><mat-icon color="primary" style="margin-right: 10px;">lock</mat-icon>Logout</a>
+      <a  mat-list-item routerLink="/dashboard/cart"> <mat-icon color="primary" style="cursor: pointer; margin-right: 10px;"
         [matBadge]="this.cartService.goodsInCart"  matBadgeColor="warn" [matBadgeHidden]="this.cartService.goodsInCart === 0"  matBadgeSize="small">add_shopping_cart</mat-icon>My cart</a>
-      <a  *ngIf="this.auth.isUserLoggedIn" mat-list-item routerLink="/liked-goods"> <mat-icon color="primary" style="cursor: pointer; margin-right: 10px;"
+      <a  mat-list-item routerLink="/dashboard/liked-goods"> <mat-icon color="primary" style="cursor: pointer; margin-right: 10px;"
         [matBadge]="this.cartService.likedGoods" matBadgeColor="warn"  [matBadgeHidden]="this.cartService.likedGoods === 0" matBadgeSize="small">favorite</mat-icon>Liked goods</a>
-      <a mat-list-item (click)="this.searchService.showSearchForm()"><mat-icon color="primary" style="margin-right: 10px; ">search</mat-icon>  Search goods</a>
-      <div class="search-form-wrap" *ngIf="this.searchService.isVisibleSearchForm">
-        <app-search></app-search>
-        <button  mat-flat-button color="primary" (click)="this.searchService.showGoodsComponent()">Search</button>
-      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -29,12 +24,17 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Shop</span>
+      <mat-icon role="button" (click)="this.searchService.showSearchForm()"  style="margin-left:10px;  color: white;">search</mat-icon>
       <span style="flex:auto"></span>
       <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before"
         (change)="this.searchService.storeThemeSelector()">
         <mat-icon>bedtime</mat-icon>
       </mat-slide-toggle>
     </mat-toolbar>
+    <div class="search-form-wrap" *ngIf="this.searchService.isVisibleSearchForm">
+      <app-search></app-search>
+      <button  mat-flat-button color="primary" (click)="this.searchService.showGoodsComponent()">Search</button>
+    </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

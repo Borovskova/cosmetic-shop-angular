@@ -76,10 +76,12 @@ export class SignUpComponent implements OnInit {
           console.log(response);
           this.auth.itemSignupMenuValue = 'Logout';
           this.auth.isUserLoggedIn = true;
-          localStorage.setItem('isUserLoggedIn', "true");
+          console.log( this.auth.isUserLoggedIn);
+           localStorage.setItem('isUserLoggedIn', "true");
           localStorage.setItem('password', this.loginUserData.password);
           localStorage.setItem('email', this.loginUserData.email);
           localStorage.setItem('itemSignupMenuValue', 'Logout');
+          this.router.navigate(['dashboard'])
         },
         error => {
           console.log('error' + error);
@@ -91,7 +93,7 @@ export class SignUpComponent implements OnInit {
   logout() {
     this.auth.isUserLoggedIn = false;
     this.auth.itemSignupMenuValue = 'Login';
-    localStorage.setItem('isUserLoggedIn', "false");
+    // localStorage.setItem('isUserLoggedIn', "false");
     localStorage.setItem('password', '');
     localStorage.setItem('email', '');
     localStorage.setItem('itemSignupMenuValue', 'Login');

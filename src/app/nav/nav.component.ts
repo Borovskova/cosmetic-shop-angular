@@ -43,4 +43,9 @@ export class NavComponent {
     })    
 // this.goodsInCart = this.cartService.products.length;
   }
+  logout(){
+    this.auth.isUserLoggedIn = false;
+    console.log('this.auth.isUserLoggedIn =' + this.auth.isUserLoggedIn);
+    
+  }
 }

@@ -1,3 +1,4 @@
+
 <div *ngIf="isNotifierVisible" style="position: relative; width: 100%;">
   <mat-card style="height: 150px; width: 300px; position: fixed; top:150px; left: 45%;z-index: 1;">
     <mat-card-content style="text-align:center">
@@ -30,8 +31,7 @@
           <p style="margin-bottom:0px;">{{element.description}}</p>
           <p > <a  style="color: gray; text-decoration: none;" [routerLink]="">Read more...</a></p>
           <p style="margin-bottom:0px; margin-top:10px;  font-weight: bold;">Price: {{element.price}}$</p>
-          <button *ngIf="this.auth.isUserLoggedIn === false" style="margin-top:10px;" mat-flat-button color="primary">Buy now</button>
-          <div style="margin-top:10px;"  *ngIf="this.auth.isUserLoggedIn">
+          <div style="margin-top:10px;" >
             <mat-icon role="button" (click)="addToCart(element)" color="accent">add_shopping_cart</mat-icon>
             <mat-icon style="margin-left: 10px;" role="button" (click)="addToLiked(element)" color="warn">favorite</mat-icon>
           </div>

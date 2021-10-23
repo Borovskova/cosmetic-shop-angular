@@ -8,6 +8,7 @@ import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AuthRoutingModule } from './auth-routing.module';
+import { AuthComponent } from './auth/auth.component';
 
 
 
@@ -16,6 +17,7 @@ import { AuthRoutingModule } from './auth-routing.module';
   declarations: [
     SignUpComponent,
     LoginNotifierComponent,
+    AuthComponent,
   ],
 
   imports: [

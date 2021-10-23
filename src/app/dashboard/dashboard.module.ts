@@ -16,22 +16,20 @@ import { LikedGoodsComponent } from '../liked-goods/liked-goods.component';
 import { SearchService } from '../search.service';
 import { GoodsCategoryDataService } from '../goods-category-data.service';
 import { AuthService } from '../auth.service';
-import { AppComponent } from '../app.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthModule } from '../auth/auth.module';
 import { MaterialModule } from '../material/material.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 
 
 
 @NgModule({
   declarations: [
-    // AppComponent,
+    DashboardComponent,
     NavComponent,
     HomeComponent,
     NotifierComponent,
@@ -47,18 +45,15 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     LikedGoodsComponent,
   ],
   imports: [
-     CommonModule,
-    BrowserModule,
+    CommonModule,
     DashboardRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule,
     HttpClientModule,
-    HttpClient,
     LayoutModule,
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [SearchService, GoodsCategoryDataService, AuthService,],
-  
+  providers: [HttpClientModule, SearchService, GoodsCategoryDataService, AuthService],
+  bootstrap: [DashboardComponent]
 })
 export class DashboardModule { }

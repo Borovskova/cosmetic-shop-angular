@@ -4,6 +4,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
 import { NotifierService } from '../notifier.service';
+import { GoodsCategoryDataService } from '../goods-category-data.service';
 
 @Component({
   selector: 'app-home',
@@ -13,46 +14,29 @@ import { NotifierService } from '../notifier.service';
 export class HomeComponent {
   /** Based on the screen size, switch from standard to one column per row */
   cards:any = [];
-  cardsForHandset:any = [];
-  cardsForWeb:any = [];
+  
 
-  isHandset: boolean = false;
-  isHandsetObserver: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return true;
-      }
-      return false;
-    })
-  );
-
-  constructor(private breakpointObserver: BreakpointObserver,
-    public appService:AppService,
-    private notifierService: NotifierService) { }
+  constructor(public goods_category_data: GoodsCategoryDataService,) { }
 
   ngOnInit() {
-    this.isHandsetObserver.subscribe(currentObserverValue => {
-      this.isHandset = currentObserverValue;
-      this. loadCards();
-    });
-    this.appService.getDeals().subscribe(
+    this.renderComponent()
+  }
+
+  renderComponent(){
+    this.goods_category_data.getTodaysSaleUrl()
+    .subscribe(
       response => {
-        this.cardsForHandset = response.handsetCards;
-        this.cardsForWeb = response.webCards;
-        this.loadCards();
-        this.notifierService.showNotification('Todays deals loaded succssfully! Click on any deal.', 'OK', 'success');
+        this.cards = response;
+        // this.dataSource.paginator = this.paginator;
+        // this.goods.forEach((a:any) => {
+        //   Object.assign(a, {quantity: 1, total: a.price});
+        // })
+
       },
       error => {
-      this.notifierService.showNotification('There was an error in receiving data from server!', 'OK', 'error');
+        console.log(error)
+
       }
     )
-  }
-
-  loadCards(){
-    this.cards = this.isHandset ? this.cardsForHandset : this.cardsForWeb;
-  }
-
-  getImage(imageName:string): string {
-    return 'url(' + 'http://localhost:3000/images/' + imageName + '.jpg' + ')';
   }
 }
