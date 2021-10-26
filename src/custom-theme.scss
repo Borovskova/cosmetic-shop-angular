@@ -38,7 +38,11 @@ $shop-theme-dark: mat.define-dark-theme((
   )
 ));
 
-.dark-theme-mode{
-  
+
+.dark-theme-mode{ 
   @include mat.all-component-themes($shop-theme-dark);
+}
+
+.light-theme-mode{
+  @include mat.all-component-themes($shop-theme);
 }

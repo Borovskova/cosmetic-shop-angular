@@ -26,8 +26,8 @@ img{
   .card-title{
     border-radius: 4px;
     padding: 10px;
-    color: white;
-    background-color: #607d8b;;
+    /* color: white;
+    background-color: #607d8b;; */
   }
   .mat-card-header .mat-card-title {
     margin-bottom: 0;

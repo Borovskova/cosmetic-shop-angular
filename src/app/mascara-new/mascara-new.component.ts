@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
+import { SearchService } from '../search.service';
 
 
 @Component({
@@ -30,13 +31,15 @@ export class MascaraNewComponent implements OnInit {
   isNotifierVisible:boolean = false;
   isNotifierLikedVisible:boolean = false;
 
+
  
 @ViewChild(MatSort) sort:MatSort;
 @ViewChild(MatPaginator) paginator:MatPaginator;
 
   constructor(public goods_category_data: GoodsCategoryDataService,
     public auth: AuthService,
-    public cartService: CartService) {
+    public cartService: CartService,
+    public searchService: SearchService) {
     // this.sortedData = this.goods.slice();
   }
 

@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
   _filter: any;
   goods2: any = [];
   isButtonRemoveVisible:boolean;
+ 
 
   @ViewChild('goodsInput') goodsInput: ElementRef<HTMLInputElement>;
 

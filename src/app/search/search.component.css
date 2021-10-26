@@ -3,7 +3,9 @@ div {
   width: 100%;
   margin-bottom: 0;
   border-radius: 4px;
-  background: white;
+  background: rgb(144, 143, 142);
+  /* background: white; */
+  color: black;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
@@ -19,3 +21,4 @@ button {
   margin-left: 10px;
   margin-bottom: 1.25em;
 }
+

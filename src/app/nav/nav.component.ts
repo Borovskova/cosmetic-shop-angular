@@ -17,18 +17,18 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavComponent {
   isDarkTheme: boolean;
   isHandset$: any;
-  valueLanguage:any = 'en';
- 
- 
+  valueLanguage: any = 'en';
+
+
 
 
 
   constructor(private breakpointObserver: BreakpointObserver,
     public loaderService: LoaderService, public searchService: SearchService,
     public auth: AuthService, public cartService: CartService, public router: Router,
-    public translate: TranslateService) {  }
+    public translate: TranslateService) { }
 
-    
+
   ngOnInit() {
     this.auth.itemSignupMenuValue = "Login";
     this.isDarkTheme = this.searchService.isDarkTheme;
@@ -38,43 +38,42 @@ export class NavComponent {
     this.auth.itemSignupMenuValue = localStorage.getItem('itemSignupMenuValue') === "Logout" ? "Logout" : "Login";
 
     this.cartService.getProducts()
-    .subscribe(response => {
-      this.cartService.goodsInCart = response.length;
-      //this.cartService.goodsInCart =  localStorage.getItem('quantityGoodsInCart');
-    })    
+      .subscribe(response => {
+        this.cartService.goodsInCart = response.length;
+        //this.cartService.goodsInCart =  localStorage.getItem('quantityGoodsInCart');
+      })
     this.cartService.getProducts2()
-    .subscribe(response => {
-      this.cartService.likedGoods = response.length;
-    })    
-// this.goodsInCart = this.cartService.products.length;
- this.valueLanguage = localStorage.getItem('language');
- console.log(this.valueLanguage);
- this.forTranslate();
+      .subscribe(response => {
+        this.cartService.likedGoods = response.length;
+      })
+    // this.goodsInCart = this.cartService.products.length;
+    this.valueLanguage = localStorage.getItem('language');
+    this.forTranslate();
   }
 
- 
-  logout(){
+
+  logout() {
     this.auth.isUserLoggedIn = false;
     localStorage.setItem('isUserLoggedIn', "false");
     console.log('this.auth.isUserLoggedIn =' + this.auth.isUserLoggedIn);
     this.router.navigate(['auth']);
   }
 
-  changeOnRuLanguage(){
+  changeOnRuLanguage() {
     this.valueLanguage = 'ru';
     localStorage.setItem('language', 'ru');
     this.forTranslate();
   }
 
-  changeOnEnLanguage(){    
+  changeOnEnLanguage() {
     this.valueLanguage = 'en';
-    localStorage.setItem('language', 'en');    
+    localStorage.setItem('language', 'en');
     this.forTranslate();
   }
-  changeOnFrLanguage(){    
+  changeOnFrLanguage() {
     this.valueLanguage = 'fr';
-    localStorage.setItem('language', 'fr');   
-    this.forTranslate(); 
+    localStorage.setItem('language', 'fr');
+    this.forTranslate();
   }
 
   forTranslate() {

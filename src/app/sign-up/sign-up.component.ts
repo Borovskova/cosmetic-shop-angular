@@ -69,14 +69,12 @@ export class SignUpComponent implements OnInit {
   }
 
   login() {
-    console.log('work');
     this.auth.loginUser(this.loginUserData)
       .subscribe(
         response => {
           console.log(response);
           this.auth.itemSignupMenuValue = 'Logout';
           this.auth.isUserLoggedIn = true;
-          console.log( this.auth.isUserLoggedIn);
            localStorage.setItem('isUserLoggedIn', "true");
           localStorage.setItem('password', this.loginUserData.password);
           localStorage.setItem('email', this.loginUserData.email);
