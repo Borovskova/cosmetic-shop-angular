@@ -72,8 +72,6 @@ export class CreamsComponent implements OnInit {
   addToLiked(element:any){
     this.cartService.addToLiked(element);  
     this.isNotifierLikedVisible = true;
-    console.log('liked work');
-    this.isNotifierVisible = true;
   }
 
   notifierHidden(){
