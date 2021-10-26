@@ -3,15 +3,16 @@
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>My cart</mat-card-title>
+        <mat-card-title>{{'cart.title' | translate}}</mat-card-title>
       </mat-card-header>
       <img mat-card-lg-image src="https://img.freepik.com/free-vector/shopping-cart_1284-672.jpg?size=338&ext=jpg">
       <mat-card-content>
-        <h1>Your cart is empty!</h1>
+        <h1>{{'cart.status' | translate}}</h1>
       </mat-card-content>
       <mat-card-actions>
-        <h3>Add goods now</h3>
-        <button mat-flat-button color="primary" routerLink="/dashboard/dec-cos">Shop Now</button>
+        <h3>{{'cart.h3AddGoods' | translate}}</h3>
+        <button style="margin-bottom: 10px;" mat-flat-button color="primary" routerLink="/dashboard/dec-cos">
+          {{'cart.buttonText' | translate}}</button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -19,24 +20,24 @@
 
 
 
-<ng-container *ngIf="this.cartService.products.length">
+<div style="padding:20px" *ngIf="this.cartService.products.length">
 
 
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Sr.No</th>
-        <th scope="col">Image</th>
-        <th scope="col">Brand</th>
-        <th scope="col">Serries</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
+        <th scope="col">{{'cart.th1' | translate}}</th>
+        <th scope="col">{{'cart.th2' | translate}}</th>
+        <th scope="col">{{'cart.th3' | translate}}</th>
+        <th scope="col">{{'cart.th4' | translate}}</th>
+        <th scope="col">{{'cart.th5' | translate}}</th>
+        <th scope="col">{{'cart.th6' | translate}}</th>
       </tr>
     </thead>
-    <tbody style="position: relative;">
+    <tbody>
       <tr *ngFor="let product of   this.cartService.products; let i = index;">
         <td>{{i + 1}}</td>
-        <td><img class="goods-image" src="{{'http://localhost:3000/images/' + product.imageName + '.png' }}"></td>
+        <td><img class="goods-image" src="{{'./assets/images/' + product.imageName}}"></td>
         <td>{{product.brand}}</td>
         <td>{{product.serries}}</td>
         <td style="font-weight: bold;">{{product.price}}$</td>
@@ -45,8 +46,9 @@
           <mat-icon class="delete-one-item" role="button" (click)="removeItem(product)">delete</mat-icon>
         </td>
       </tr>
-      <button style="margin-top: 10px; position: absolute; left:45%" (click)="makeEmptyCart()" mat-flat-button
-        color="warn">Remove all</button>
     </tbody>
   </table>
-</ng-container>
+  <div class="button-remove-all-wrap">
+    <button (click)="makeEmptyCart()" mat-flat-button color="warn">{{'cart.buttonRemoveAllText' | translate}}</button>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 <div class="container" style="padding: 20px">
-  <h1 class="mat-h1 h1">Face care</h1>
+  <h1 class="mat-h1 h1">{{'face-care.title' | translate}}</h1>
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of goods" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card card-image">
+      <mat-card class="dashboard-card card-image" (click)="goToGroupOfGoods(card.link)">
         <mat-card-header class="mat-app-background card-title">
           <mat-card-title>
             {{card.name}}

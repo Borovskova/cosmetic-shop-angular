@@ -59,7 +59,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "7g",
             "country": "Made in: France",
             "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara2",
+            "imageName": "mascara2.png",
         },
         {
             "id": "2",
@@ -70,7 +70,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: France",
             "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara3",
+            "imageName": "mascara3.png",
         },
         {
             "id": "3",
@@ -81,7 +81,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "9g",
             "country": "Made in: France",
             "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara4",
+            "imageName": "mascara4.png",
         },
         {
             "id": "4",
@@ -92,7 +92,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "10g",
             "country": "Made in: Italy",
             "description": "Dior Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara5",
+            "imageName": "mascara5.png",
 
         },
         {
@@ -104,7 +104,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: Italy",
             "description": "Dior Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara2",
+            "imageName": "mascara2.png",
 
         },
         {
@@ -116,7 +116,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: Italy",
             "description": "Dior Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara3",
+            "imageName": "mascara3.png",
 
         },
         {
@@ -128,7 +128,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: Poland",
             "description": "Max factor Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara2",
+            "imageName": "mascara2.png",
         },
         {
             "id": "8",
@@ -139,7 +139,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "9g",
             "country": "Made in: Spain",
             "description": "Loreal Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara4",
+            "imageName": "mascara4.png",
 
         },
         {
@@ -151,7 +151,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: Spain",
             "description": "Loreal Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara5",
+            "imageName": "mascara5.png",
 
         },
         {
@@ -163,7 +163,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: Spain",
             "description": "Loreal Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara2",
+            "imageName": "mascara2.png",
 
         },
         {
@@ -175,7 +175,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "9g",
             "country": "Made in: Germany",
             "description": "Viviene Saabo Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara4",
+            "imageName": "mascara4.png",
 
         },
         {
@@ -187,7 +187,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "8g",
             "country": "Made in: Germany",
             "description": "Viviene Saabo Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara3",
+            "imageName": "mascara3.png",
 
         },
         {
@@ -199,7 +199,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "9g",
             "country": "Made in: Germany",
             "description": "Viviene Saabo Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara2",
+            "imageName": "mascara2.png",
 
         },
         {
@@ -211,7 +211,7 @@ router.get('/guestMascara', (req, res) => {
             "volume": "6g",
             "country": "Made in: Greece",
             "description": "Maybelline Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara4",
+            "imageName": "mascara4.png",
 
         },
         {
@@ -223,73 +223,21 @@ router.get('/guestMascara', (req, res) => {
             "volume": "10g",
             "country": "Made in: Greece",
             "description": "Maybelline Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "imageName": "mascara2",
+            "imageName": "mascara2.png",
 
         },
 
     ];
     res.json(mascara);
 })
-router.get('/adminMascara', (req, res) => {
-    let mascara = [
-        {
-            "id": "1",
-            "brand": "Lancome",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "cols": "1",
-            "rows": "1",
-        },
-        {
-            "id": "2",
-            "brand": "Dior",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "cols": "1",
-            "rows": "1",
-        },
-        {
-            "id": "3",
-            "brand": "Max factor",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "cols": "1",
-            "rows": "1",
-        },
-        {
-            "id": "4",
-            "brand": "Loreal",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "cols": "1",
-            "rows": "1",
-        },
-        {
-            "id": "5",
-            "brand": "Viviene Saabo",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "cols": "1",
-            "rows": "1",
-        },
-        {
-            "id": "6",
-            "brand": "Maybelline",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
-            "cols": "1",
-            "rows": "1",
-        },
 
-    ];
-    res.json(mascara);
-})
 router.get('/face-care', (req, res) => {
     let faceCareGoods = [
         {
             "id": "1",
             "name": "Cream for face",
             "imgName": "creamBakground1",
+            "link": "/dashboard/creams",
             "cols": "1",
             "rows": "1"
         },
@@ -297,6 +245,7 @@ router.get('/face-care', (req, res) => {
             "id": "2",
             "name": "Micellar water",
             "imgName": "micellarWaterBakground1",
+            "link": "/dashboard/creams",
             "cols": "1",
             "rows": "1"
         },
@@ -304,6 +253,7 @@ router.get('/face-care', (req, res) => {
             "id": "3",
             "name": "Lotion for face",
             "imgName": "lotionBakground1",
+            "link": "/dashboard/creams",
             "cols": "1",
             "rows": "1"
         },
@@ -311,6 +261,7 @@ router.get('/face-care', (req, res) => {
             "id": "4",
             "name": "Shower face gel",
             "imgName": "gelFaceBakground1",
+            "link": "/dashboard/creams",
             "cols": "1",
             "rows": "1"
         },
@@ -318,6 +269,7 @@ router.get('/face-care', (req, res) => {
             "id": "5",
             "name": "Shower face scrab",
             "imgName": "gelFaceBakground1",
+            "link": "/dashboard/creams",
             "cols": "1",
             "rows": "1"
         },
@@ -325,6 +277,7 @@ router.get('/face-care', (req, res) => {
             "id": "6",
             "name": "Shower face foam",
             "imgName": "faceFoamBakground1",
+            "link": "/dashboard/creams",
             "cols": "1",
             "rows": "1"
         },
@@ -332,70 +285,203 @@ router.get('/face-care', (req, res) => {
     res.json(faceCareGoods);
 })
 router.get('/guestCreams', (req, res) => {
-    let mascara = [
+    let creams = [
         {
             "id": "1",
-            "imgName": "gelFaceBakground1",
+            "imageName": "gelFaceBakground1.jpg",
             "brand": "Lancome",
+            "serries": "Ultra clean",
+            "price": "12",
+            "availability": "Are available",
+            "volume": "150g",
+            "country": "Made in: Greece",
             "tagline": "By 1 get 2!",
-            "country": "Made in: France",
             "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
             "cols": "1",
             "rows": "1",
         },
         {
             "id": "2",
-            "imgName": "makeup2",
+            "imageName": "lotionBakground1.jpg",
             "brand": "Dior",
+            "serries": "For dry skin",
+            "price": "10",
+            "availability": "Are available",
+            "volume": "100g",
             "tagline": "-50% for all 'Dior'",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "country": "Made in: Italy",
+            "description": "Dior mascara proves that beautiful eyes do not only shine with happiness.",
             "cols": "1",
             "rows": "1",
         },
         {
             "id": "3",
-            "imgName":"lotionBakground1",
+            "imageName": "gelFaceBakground1.jpg",
             "brand": "Max factor",
+            "serries": "Fresh",
+            "price": "2",
+            "availability": "Are available",
+            "volume": "200g",
             "tagline": "Take lotion and get -50% for gel",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "country": "Made in: Spain",
+            "description": "Max factor proves that beautiful eyes do not only shine with happiness.",
             "cols": "1",
             "rows": "1",
         },
         {
             "id": "4",
-            "imgName": "makeup1",
+            "imageName": "lotionBakground1.jpg",
             "brand": "Loreal",
+            "serries": "Light",
+            "price": "13",
+            "availability": "Are available",
+            "volume": "300g",
             "tagline": "-20% for all",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "country": "Made in: Poland",
+            "description": "Loreal mascara proves that beautiful eyes do not only shine with happiness.",
             "cols": "1",
             "rows": "1",
         },
         {
             "id": "5",
-            "imgName": "makeup2",
+            "imageName": "gelFaceBakground1.jpg",
             "brand": "Viviene Saabo",
+            "serries": "For all type of skin",
+            "price": "8",
+            "availability": "Are available",
+            "volume": "100g",
             "tagline": "Cashback 20%",
             "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "description": "Viviene Saabo mascara proves that beautiful eyes do not only shine with happiness.",
             "cols": "1",
             "rows": "1",
         },
         {
             "id": "6",
-            "imgName": "micellarWaterBakground1",
-            "brand": "Maybelline",
+            "imageName": "lotionBakground1.jpg",
+            "brand": "Clean & Clear",
+            "serries": "Night",
+            "price": "12",
+            "availability": "Are available",
+            "volume": "100g",
             "tagline": "By 2 get 3!",
-            "country": "Made in: France",
-            "description": "Lancome Idole mascara proves that beautiful eyes do not only shine with happiness.",
+            "country": "Made in: Ukraine",
+            "description": "Clean & Clear mascara proves that beautiful eyes do not only shine with happiness.",
             "cols": "1",
             "rows": "1",
         },
 
     ];
-    res.json(mascara);
+    res.json(creams);
+})
+router.get('/todaySales', (req, res) => {
+    let sales = [
+        {
+            "id": "1",
+            "imgName": "gelFaceBakground1.jpg",
+            "tagline": "By 1 gel 'Clean & Clear' get 2!",
+            "link": "/dashboard/face-care",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "2",
+            "imgName": "mascara5.png",
+            "tagline": "-50% for all mascara 'Dior'",
+            "link": "/dashboard/dec-cos",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "3",
+            "imgName": "lotionBakground1.jpg ",
+            "tagline": "Take any lotion and get -50% for any gel",
+            "link": "/dashboard/face-care",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "4",
+            "imgName": "mascara2.png",
+            "tagline": "-20% for all mascara 'Lancome'",
+            "link": "/dashboard/dec-cos",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "5",
+            "imgName": "mascara3.png",
+            "tagline": "Cashback 20% for all mascara 'Loreal'",
+            "link": "/dashboard/dec-cos",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "6",
+            "imgName": "mascara4.png",
+            "tagline": "By 2 mascara 'Chenel' get 3!",
+            "link": "/dashboard/dec-cos",
+            "cols": "1",
+            "rows": "1",
+        },
+
+    ];
+    res.json(sales);
+})
+router.get('/decorativeCosm', (req, res) => {
+    let decorativeCosm = [
+
+        {
+            "id": "1",
+            "title": "Mascara",
+            "imgName": "makeup8",
+            "link": "/dashboard/mascara",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "2",
+            "title": "Face powder",
+            "imgName": "makeup1",
+            "link": "/dashboard/mascara",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "3",
+            "title": "Tone cream",
+            "imgName": "makeup5",
+            "link": "/dashboard/mascara",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "4",
+            "title": "Eyeshadows and Pomade",
+            "imgName": "makeup3",
+            "link": "/dashboard/mascara",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "5",
+            "title": "Tassels",
+            "imgName": "makeup4",
+            "link": "/dashboard/mascara",
+            "cols": "1",
+            "rows": "1",
+        },
+        {
+            "id": "6",
+            "title": "Eyeliner",
+            "imgName": "makeup7",
+            "link": "/dashboard/mascara",
+            "cols": "1",
+            "rows": "1",
+        },
+
+    ];
+    res.json(decorativeCosm);
 })
 
 module.exports = router;

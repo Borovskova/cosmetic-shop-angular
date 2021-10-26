@@ -1,7 +1,42 @@
-.example-card{
+.example-card {
     max-width: 700px;
     margin-top: 50px;
 }
-img{
+
+img {
     mix-blend-mode: multiply;
-  }
+}
+
+tr,
+th,
+td {
+    text-align: center;
+}
+
+td,
+th {
+    color: gray;
+}
+
+.button-remove-all-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+tr:hover {
+    background: #607d8b;
+    text-emphasis-color: white;
+}
+
+tr:hover :nth-child(n) {
+    color: white;
+}
+
+.delete-one-item {
+    font-size: 30px;
+}
+
+.delete-one-item:hover {
+    color: #f44336 !important;
+}

@@ -38,8 +38,7 @@ export class CartService {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    console.log(this.cartItemList);
-    //localStorage.setItem('quantityGoodsInCart', this.cartItemList.length);      
+    //localStorage.setItem('quantityGoodsInCart', this.cartItemList.length);        
   }
   addToLiked(product:any){
     this.cartItemList2.push(product);

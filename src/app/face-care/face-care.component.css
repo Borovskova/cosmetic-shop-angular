@@ -13,6 +13,7 @@ img{
     left: 15px;
     right: 15px;
     bottom: 15px;
+    cursor: pointer;
   }
   .img-wrap{
       width: 100%;

@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
 import { NotifierService } from '../notifier.service';
 import { GoodsCategoryDataService } from '../goods-category-data.service';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +18,12 @@ export class HomeComponent {
   cards:any = [];
   
 
-  constructor(public goods_category_data: GoodsCategoryDataService,) { }
+  constructor(public goods_category_data: GoodsCategoryDataService, public router: Router,
+     public translate: TranslateService) { }
 
   ngOnInit() {
     this.renderComponent()
+    this.forTranslate();
   }
 
   renderComponent(){
@@ -38,5 +42,15 @@ export class HomeComponent {
 
       }
     )
+  }
+  forTranslate() {
+    this.translate.addLangs(['en', 'ru', 'fr']);
+    this.translate.setDefaultLang('fr');
+    const lang = localStorage.getItem('language') || 'en'
+    this.translate.use(lang);
+  }
+
+  goToGoodsCategory(link:any){
+ this.router.navigateByUrl(link);
   }
 }

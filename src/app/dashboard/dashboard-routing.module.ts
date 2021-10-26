@@ -10,6 +10,7 @@ import { MascaraNewComponent } from '../mascara-new/mascara-new.component';
 import { CartComponent } from '../cart/cart.component';
 import { LikedGoodsComponent } from '../liked-goods/liked-goods.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreamsComponent } from '../creams/creams.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'body-care', component: DashboardComponent, children: [{ path: 'body-care', component: BodyCareComponent }, { path: '', component: BodyCareComponent }] },
   { path: 'hair-care', component: DashboardComponent, children: [{ path: 'hair-care', component: HairCareComponent }, { path: '', component: HairCareComponent }] },
   { path: 'mascara', component: DashboardComponent, children: [{ path: 'mascara', component: MascaraNewComponent }, { path: '', component: MascaraNewComponent }] },
+  { path: 'creams', component: DashboardComponent, children: [{ path: 'creams', component: CreamsComponent }, { path: '', component: CreamsComponent }] },
 
 ];
 

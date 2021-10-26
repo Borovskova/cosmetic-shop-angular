@@ -1,0 +1,82 @@
+{
+    "nav": {
+        "shop": "Маркет",
+        "menu": "Меню",
+        "home": "Домой",
+        "logout": "Выход",
+        "cart": "Корзина",
+        "liked": "Понравившиеся",
+        "langRu": "Русский",
+        "langEn": "Английский",
+        "langFr": "Французкий"
+    },
+
+    "home": {
+        "mainTitle": "Скидки дня",
+        "cardTitle": {
+            "By 1 gel 'Clean & Clear' get 2!": "Бери 1 гель бренда 'Clean & Clear' получи 2!",
+            "-50% for all mascara 'Dior'": "-50% на все туши бренда 'Dior'",
+            "Take any lotion and get -50% for any gel": "Бери любой лосьен и получи -50% на любой гель",
+            "-20% for all mascara 'Lancome'": "-20% на все туши бренда  'Lancome'",
+            "Cashback 20% for all mascara 'Loreal'": "Кэшбэк 20% на все туши бренда 'Loreal'",
+            "By 2 mascara 'Chenel' get 3!": "Бери 2 туши 'Chenel' получай 3!"
+        }
+    },
+    "cart": {
+        "title": "Моя корзина",
+        "status": "В Вашей корзине пока пусто!",
+        "buttonText": "Перейти к товарам",
+        "h3AddGoods": "Добавить товары сейчас",
+        "th1": "Покупка номер: ",
+        "th2": "Фото",
+        "th3": "Бренд",
+        "th4": "Серия",
+        "th5": "Цена",
+        "th6": "Количество",
+        "buttonRemoveAllText": "Очистить корзину"
+    },
+    "likedGoods": {
+        "title": "Понравившиеся товары",
+        "status": "У Вас пока нет понравившихся товаров!",
+        "buttonText": "Поиск товаров",
+        "h3AddGoods": "Искать товары",
+        "th1": "Товар номер: ",
+        "th2": "Фото",
+        "th3": "Бренд",
+        "th4": "Серия",
+        "th5": "Цена",
+        "th6": "Количество",
+        "buttonRemoveAllText": "Очистить список"
+    },
+    "search": {
+        "placeholderText": "Выберите категорию товаров",
+        "buttonSearchText": "Поиск"
+    },
+    "autocompleteCategory": {
+        "Decorative cosmetics": "Декоративная косметика",
+        "Face care": "Уход за лицом",
+        "Body care": "Уход за телом",
+        "Hair care": "Уход за волосами"
+    },
+    "dec-cos": {
+        "title": "Декоративная косметика"
+    },
+    "face-care": {
+        "title": "Уход за лицом"
+    },
+    "creams": {
+        "notifierText": "Товар был добавлен в Вашу корзину!",
+        "notifierLikedText": "Товар был добавлен в понравившиеся товары!",
+        "mat-label": "Добавьте фильтрацию по бренду",
+        "readMore": "Подробнее...",
+        "price": "Цена:"
+    },
+    "mascara": {
+        "notifierText": "Товар был добавлен в Вашу корзину!",
+        "notifierLikedText": "Товар был добавлен в понравившиеся товары!",
+        "mat-label": "Добавьте фильтрацию по бренду",
+        "readMore": "Подробнее...",
+        "price": "Цена:"
+    }
+    
+}

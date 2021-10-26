@@ -1,0 +1,82 @@
+{
+    "nav": {
+        "shop": "Shop",
+        "menu": "Menu",
+        "home": "Home",
+        "logout": "Logout",
+        "cart": "My cart",
+        "liked": "My liked goods",
+        "langRu": "Russian",
+        "langEn": "English",
+        "langFr": "Franch"
+    },
+
+    "home": {
+        "mainTitle": "Todays Sales",
+        "cardTitle": {
+            "By 1 gel 'Clean & Clear' get 2!": "By 1 gel 'Clean & Clear' get 2!",
+            "-50% for all mascara 'Dior'": "-50% for all mascara 'Dior'",
+            "Take any lotion and get -50% for any gel": "Take any lotion and get -50% for any gel",
+            "-20% for all mascara 'Lancome'": "-20% for all mascara 'Lancome'",
+            "Cashback 20% for all mascara 'Loreal'": "Cashback 20% for all mascara 'Loreal'",
+            "By 2 mascara 'Chenel' get 3!": "By 2 mascara 'Chenel' get 3!"
+        }
+    },
+
+    "cart": {
+        "title": "My cart",
+        "status": "Your cart is empty!",
+        "buttonText": "Shop now",
+        "h3AddGoods": "Add goods now",
+        "th1": "Sr.No",
+        "th2": "Image",
+        "th3": "Brand",
+        "th4": "Serries",
+        "th5": "Price",
+        "th6": "Quantity",
+        "buttonRemoveAllText": "Remove All"
+    },
+    "likedGoods": {
+        "title": "Liked goods",
+        "status": "You don't liked any goods!",
+        "buttonText": "Search Now",
+        "h3AddGoods": "Search goods now",
+        "th1": "Sr.No",
+        "th2": "Image",
+        "th3": "Marque",
+        "th4": "Séries",
+        "th5": "Prix",
+        "th6": "Quantité",
+        "buttonRemoveAllText": "Remove All"
+    },
+    "search": {
+        "placeholderText": "Select goods category",
+        "buttonSearchText": "Search"
+    },
+    "autocompleteCategory": {
+        "Decorative cosmetics": "Decorative cosmetics",
+        "Face care": "Face care",
+        "Body care": "Body care",
+        "Hair care": "Hair care"
+    },
+    "dec-cos": {
+        "title": "Decorative cosmetics"
+    },
+    "face-care": {
+        "title": "Face care"
+    },
+    "creams": {
+        "notifierText": "Product was added to your cart!",
+        "notifierLikedText": "Product was added to your liked goods!",
+        "mat-label": "Filter of brands",
+        "readMore": "Read more...",
+        "price": "Price:"
+    },
+    "mascara": {
+        "notifierText": "Product was added to your cart!",
+        "notifierLikedText": "Product was added to your liked goods!",
+        "mat-label": "Filter of brands",
+        "readMore": "Read more...",
+        "price": "Price:"
+    }
+}

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
+import { GoodsCategoryDataService } from '../goods-category-data.service';
 
 @Component({
   selector: 'app-decorative-cosmetics',
@@ -9,36 +8,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./decorative-cosmetics.component.css']
 })
 export class DecorativeCosmeticsComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { link: '/mascara', img: 'makeup1.jpg', title: 'Mascara', cols: 1, rows: 1 },
-          { link: '/hair-care', img: 'makeup2.jpg', title: 'Pomade', cols: 1, rows: 1 },
-          { link: '/body-care', img: 'makeup3.jpg', title: 'Face powder', cols: 1, rows: 1 },
-          { link: '/face-care', img: 'makeup4.jpg', title: 'Ink', cols: 1, rows: 1 }
-        ];
-      }
 
-      return [
-        { link: '/dashboard/mascara', img: 'makeup8.jpg', title: 'Mascara', cols: 1, rows: 1 },
-        { link: '/dashboard/mascara', img: 'makeup1.jpg', title: 'Face powder', cols: 1, rows: 1 },
-        { link: '/dashboard/mascara', img: 'makeup5.jpg', title: 'Tone cream', cols: 1, rows: 1 },
-        { link: '/dashboard/mascara', img: 'makeup3.jpg', title: 'Eyeshadows and Pomade', cols: 1, rows: 1 },
-        { link: '/dashboard/mascara', img: 'makeup4.jpg', title: 'Tassels', cols: 1, rows: 1 },
-        { link: '/dashboard/mascara', img: 'makeup7.jpg', title: 'Eyeliner', cols: 1, rows: 1 },
-      ];
-    })
-  );
+  goods: any = [];
 
-  getImage(img: string): string {
-    return 'url(' + 'http://localhost:3000/images/' + img + ')';
+  constructor(public router: Router, public goods_category_data: GoodsCategoryDataService) { }
+
+
+  ngOnInit() {
+    this.renderComponent()
   }
+
+  renderComponent() {
+    this.goods_category_data.getDecorativeCosmUrl()
+      .subscribe(
+        response => {
+          this.goods = response;
+        },
+        error => {
+          console.log(error)
+        }
+      )
+  }
+  getImage(img: string): string {
+    return 'url(' + './assets/images/' + img + '.jpg)';
+  }
+
   goToGroupOfGoods(link: any) {
     this.router.navigateByUrl(link);
   }
 
-  constructor(private breakpointObserver: BreakpointObserver,
-    public router: Router) { }
+
 }

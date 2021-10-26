@@ -22,7 +22,7 @@ export class LikedGoodsComponent implements OnInit {
   removeItem(product: any) {
     this.cartService.removeLikedItem(product);
   }
-  makeEmptyCart() {
+  makeEmptyLiked() {
     this.cartService.removeAllLiked();
   }
 }

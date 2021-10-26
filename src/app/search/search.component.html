@@ -1,7 +1,7 @@
 <div class="search-container">
-  <form>
+  <form style="margin-bottom: 0;">
     <mat-form-field>
-      <input #goodsInput type="text" matInput placeholder="Select goods category" [matAutocomplete]="auto"
+      <input #goodsInput type="text" matInput placeholder="{{'search.placeholderText' | translate}}" [matAutocomplete]="auto"
         [formControl]="myControl">
       <mat-icon role="button" (click)="removeValueInInput()" color="primary" style="cursor: pointer;margin-right: 10px;" matSuffix>cancel
       </mat-icon>
@@ -9,9 +9,11 @@
 
         <!-- if use an array of objects [displayWith]="displayFn - it is atribute for mat-autocomplete" -->
         <mat-option *ngFor="let category of filteredOptions | async" [value]="category">
-          {{category}}
+          {{'autocompleteCategory.' + category | translate}}
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
   </form>
+  <button  mat-flat-button color="primary"
+        (click)="this.searchService.showGoodsComponent()">{{'search.buttonSearchText' | translate}}</button>
 </div>

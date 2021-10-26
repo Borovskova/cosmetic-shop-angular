@@ -5,6 +5,7 @@ import { shareReplay } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Injectable({
@@ -13,30 +14,10 @@ import { Router } from '@angular/router';
 
 export class SearchService {
   //search component
-  goods: any = [
-    'Decorative cosmetics', 'Face care', 'Body care', 'Hair care'];
-  goods2: any = [
-    { goodsCategory: 'Decorative cosmetics', link: '/search' },
-    { goodsCategory: 'Face care', link: '/search' },
-    { goodsCategory: 'Body care', link: '/search' },
-    { goodsCategory: 'Hair care', link: '/search' },
-  ];
-
-  objectGoods: any = [
-    { name: 'Mascara', appointment: 'Decorative cosmetics' },
-    { name: 'Pomade', appointment: 'Decorative cosmetics' },
-    { name: 'Face powder', appointment: 'Decorative cosmetics' },
-    { name: 'Hands cream', appointment: 'Body care' },
-    { name: 'Body lotion', appointment: 'Body care' },
-    { name: 'Soap', appointment: 'Body care' },
-    { name: 'Face cream', appointment: 'Face care' },
-    { name: 'Eye cream', appointment: 'Face care' },
-    { name: 'Face milk', appointment: 'Face care' },
-    { name: 'Makeup remover', appointment: 'Face care' },
-    { name: 'Shampoo', appointment: 'Hair care' },
-    { name: 'Conditioner', appointment: 'Hair care' },
-    { name: 'Hair oil', appointment: 'Hair care' },
-  ];
+  goods: any = ['Decorative cosmetics', 'Face care', 'Body care', 'Hair care'];
+  
+ 
+  
   myControl = new FormControl();
   filteredOptions: Observable<any[]>;
   coincidence: any;
@@ -51,10 +32,13 @@ export class SearchService {
       map(result => result.matches),
       shareReplay()
     );
+    
 
     @ViewChild('goodsInput') goodsInput: ElementRef<HTMLInputElement>;
 
-  constructor(private breakpointObserver: BreakpointObserver, public router: Router) { }
+  constructor(private breakpointObserver: BreakpointObserver, public router: Router,
+     public translate: TranslateService) {
+      }
 
   public _filter(value: any): any[] {
     const filterValue = value.toLowerCase();
@@ -85,16 +69,7 @@ export class SearchService {
     }
     this.isVisibleSearchForm = false;
   }
-  // public redirect(){
-  //   this.router.navigateByUrl('/dec-cos');
-  // }
-// showRemoveButton(){
-//   console.log(this.goodsInput.nativeElement.value);
-  
-//   if( this.goodsInput.nativeElement.value.length){
-//     this.isButtonRemoveVisible = true;
-//   }
-// }
+ 
   
   displayFn(subjecty: any) {
     return subjecty ? subjecty.appointment : undefined;

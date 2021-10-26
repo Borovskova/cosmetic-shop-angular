@@ -6,6 +6,8 @@ import { LoaderService } from '../loader/loader.service';
 import { SearchService } from '../search.service';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav',
@@ -15,6 +17,7 @@ import { CartService } from '../cart.service';
 export class NavComponent {
   isDarkTheme: boolean;
   isHandset$: any;
+  valueLanguage:any = 'en';
  
  
 
@@ -22,8 +25,10 @@ export class NavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver,
     public loaderService: LoaderService, public searchService: SearchService,
-    public auth: AuthService, public cartService: CartService) { }
+    public auth: AuthService, public cartService: CartService, public router: Router,
+    public translate: TranslateService) {  }
 
+    
   ngOnInit() {
     this.auth.itemSignupMenuValue = "Login";
     this.isDarkTheme = this.searchService.isDarkTheme;
@@ -42,10 +47,42 @@ export class NavComponent {
       this.cartService.likedGoods = response.length;
     })    
 // this.goodsInCart = this.cartService.products.length;
+ this.valueLanguage = localStorage.getItem('language');
+ console.log(this.valueLanguage);
+ this.forTranslate();
   }
+
+ 
   logout(){
     this.auth.isUserLoggedIn = false;
+    localStorage.setItem('isUserLoggedIn', "false");
     console.log('this.auth.isUserLoggedIn =' + this.auth.isUserLoggedIn);
-    
+    this.router.navigate(['auth']);
+  }
+
+  changeOnRuLanguage(){
+    this.valueLanguage = 'ru';
+    localStorage.setItem('language', 'ru');
+    this.forTranslate();
+  }
+
+  changeOnEnLanguage(){    
+    this.valueLanguage = 'en';
+    localStorage.setItem('language', 'en');    
+    this.forTranslate();
+  }
+  changeOnFrLanguage(){    
+    this.valueLanguage = 'fr';
+    localStorage.setItem('language', 'fr');   
+    this.forTranslate(); 
+  }
+
+  forTranslate() {
+    this.translate.addLangs(['en', 'ru', 'fr']);
+    this.translate.setDefaultLang('fr');
+    const lang = localStorage.getItem('language') || 'en'
+    this.translate.use(lang);
   }
 }
+
+

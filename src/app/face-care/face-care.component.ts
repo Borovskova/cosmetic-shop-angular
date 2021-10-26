@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GoodsCategoryDataService } from '../goods-category-data.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class FaceCareComponent implements OnInit {
 
   goods: any = [];
 
-  constructor(public goods_category_data: GoodsCategoryDataService) { }
+  constructor(public goods_category_data: GoodsCategoryDataService, public router: Router) { }
 
   ngOnInit() {
     this.renderComponent()
@@ -21,16 +22,14 @@ export class FaceCareComponent implements OnInit {
     .subscribe(
       response => {
         this.goods = response;
-        // this.dataSource.paginator = this.paginator;
-        // this.goods.forEach((a:any) => {
-        //   Object.assign(a, {quantity: 1, total: a.price});
-        // })
-
       },
       error => {
         console.log(error)
 
       }
     )
+  }
+  goToGroupOfGoods(link: any) {
+    this.router.navigateByUrl(link);
   }
 }

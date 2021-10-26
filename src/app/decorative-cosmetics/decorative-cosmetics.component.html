@@ -1,9 +1,9 @@
 <div class="grid-container">
-  <h1 style="text-align: center;" class="mat-h1">Decorative cosmetics</h1>
+  <h1 style="text-align: center;" class="mat-h1">{{'dec-cos.title' | translate}}</h1>
   <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card card-image" [style.background-image]="getImage(card.img)"
-        (click)=goToGroupOfGoods(card.link)>
+    <mat-grid-tile *ngFor="let card of goods" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card card-image" [style.background-image]="getImage(card.imgName)"
+        (click)="goToGroupOfGoods(card.link)">
         <mat-card-header class="mat-app-background card-title">
           <mat-card-title>
             {{card.title}}

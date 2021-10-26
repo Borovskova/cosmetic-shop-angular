@@ -3,15 +3,16 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Liked goods</mat-card-title>
+          <mat-card-title>{{'likedGoods.title' | translate}}</mat-card-title>
         </mat-card-header>
         <img mat-card-lg-image src="https://image.freepik.com/free-vector/heart-shape-social-media-notification-icon-speech-bubbles-vector-illustration_56104-841.jpg">
         <mat-card-content>
-          <h1>You don't liked any goods!</h1>
+          <h1>{{'likedGoods.status' | translate}}</h1>
         </mat-card-content>
         <mat-card-actions>
-          <h3>Search goods now</h3>
-          <button mat-flat-button color="primary" routerLink="/dashboard/dec-cos">Search Now</button>
+          <h3>{{'likedGoods.h3AddGoods' | translate}}</h3>
+          <button style="margin-bottom: 10px;" mat-flat-button color="primary"
+           routerLink="/dashboard/dec-cos">{{'likedGoods.buttonText' | translate}}</button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -19,24 +20,22 @@
   
   
   
-  <ng-container *ngIf="this.cartService.likedProducts.length">
-  
-  
-    <table class="table">
+  <div style="padding:10px" *ngIf="this.cartService.likedProducts.length">
+    <table class="table" >
       <thead>
         <tr>
-          <th scope="col">Sr.No</th>
-          <th scope="col">Image</th>
-          <th scope="col">Brand</th>
-          <th scope="col">Serries</th>
-          <th scope="col">Price</th>
-          <th scope="col">Quantity</th>
+          <th scope="col">{{'likedGoods.th1' | translate}}</th>
+          <th scope="col">{{'likedGoods.th2' | translate}}</th>
+          <th scope="col">{{'likedGoods.th3' | translate}}</th>
+          <th scope="col">{{'likedGoods.th4' | translate}}</th>
+          <th scope="col">{{'likedGoods.th5' | translate}}</th>
+          <th scope="col">{{'likedGoods.th6' | translate}}</th>
         </tr>
       </thead>
-      <tbody style="position: relative;">
+      <tbody>
         <tr *ngFor="let product of   this.cartService.likedProducts; let i = index;">
           <td>{{i + 1}}</td>
-          <td><img src="{{'http://localhost:3000/images/' + product.imageName + '.png' }}"></td>
+          <td><img src="{{'./assets/images/' + product.imageName}}"></td>
           <td>{{product.brand}}</td>
           <td>{{product.serries}}</td>
           <td style="font-weight: bold;">{{product.price}}$</td>
@@ -45,8 +44,9 @@
             <mat-icon class="delete-one-item" role="button" (click)="removeItem(product)">delete</mat-icon>
           </td>
         </tr>
-        <button style="margin-top: 10px; position: absolute; left:45%" (click)="makeEmptyCart()" mat-flat-button
-          color="warn">Remove all</button>
       </tbody>
     </table>
-  </ng-container>
+    <div class="button-remove-all-wrap">
+      <button (click)="makeEmptyLiked()" mat-flat-button color="warn">{{'likedGoods.buttonRemoveAllText' | translate}}</button>
+    </div>
+  </div>

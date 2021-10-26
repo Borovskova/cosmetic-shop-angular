@@ -1,15 +1,16 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Todays Sale</h1>
-  <mat-grid-list cols="2" rowHeight="450px">
+  <h1 class="mat-h1">{{'home.mainTitle' | translate}}</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card [routerLink]="['/dec-cos']"   class="dashboard-card card-image" >
+      <mat-card (click)="goToGoodsCategory(card.link)"  class="dashboard-card card-image" 
+      style="cursor: pointer;">
         <mat-card-header class="mat-app-background card-title">
           <mat-card-title>
-            {{card.tagline}}
+            {{'home.cardTitle.' + card.tagline | translate}}
           </mat-card-title>
         </mat-card-header>
         <div class="img-wrap">
-          <img src="./assets/images/{{card.imgName}}.jpg">
+          <img src="./assets/images/{{card.imgName}}">
         </div>
       </mat-card>
     </mat-grid-tile>

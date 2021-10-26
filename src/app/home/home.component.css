@@ -2,6 +2,9 @@ img{
   object-fit: contain;
   max-width: 100%;
   mix-blend-mode: multiply;
+  max-height: 200px;
+  border-radius: 4px;
+  margin: 15px;
 }
 .grid-container{
   padding: 20px;
@@ -29,4 +32,18 @@ img{
 }
 .mat-card-header .mat-card-title {
   margin-bottom: 0;
+  font-weight: normal;
+}
+
+@media screen and (max-width:992px){
+  .mat-card-header .mat-card-title{
+    font-size: 15px;
+    font-weight: normal;
+  }
+}
+@media screen and (max-width:576px){
+  .mat-card-header .mat-card-title{
+    font-size: 13px;
+    font-weight: normal;
+  }
 }

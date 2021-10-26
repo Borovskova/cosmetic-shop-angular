@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 import { map, startWith } from 'rxjs/operators';
 import { SearchService } from '../search.service';
 
@@ -22,20 +21,17 @@ export class SearchComponent implements OnInit {
 
   @ViewChild('goodsInput') goodsInput: ElementRef<HTMLInputElement>;
 
-  constructor(public searchService: SearchService) { }
+  constructor(public searchService: SearchService,  public translate: TranslateService) { }
 
   ngOnInit() {
     this.goods = this.searchService.goods;
-    this.goods2 = this.searchService.goods2;
-    this.objectGoods = this.searchService.objectGoods;
-    this.myControl = this.searchService.myControl;
+    this.myControl =  this.searchService.myControl;  
     this._filter = this.searchService._filter;
     this.isButtonRemoveVisible = this.searchService.isButtonRemoveVisible;
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions =  this.myControl.valueChanges.pipe(
       startWith(''),
       map((value: any) => this._filter(value))
-    );
-    // this.searchService.showRemoveButton();
+    ); 
   }
 
   displayFn() {

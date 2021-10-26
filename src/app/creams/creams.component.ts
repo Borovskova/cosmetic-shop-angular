@@ -6,12 +6,13 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
+import { MatButton } from '@angular/material/button';
 
 
 @Component({
-  selector: 'app-mascara-new',
-  templateUrl: './mascara-new.component.html',
-  styleUrls: ['./mascara-new.component.css'],
+  selector: 'app-creams',
+  templateUrl: './creams.component.html',
+  styleUrls: ['./creams.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -20,8 +21,7 @@ import { CartService } from '../cart.service';
     ]),
   ],
 })
-export class MascaraNewComponent implements OnInit {
-
+export class CreamsComponent implements OnInit {
   sortedData: any[];
   goods: any = [];
   dataSource: any;
@@ -30,23 +30,21 @@ export class MascaraNewComponent implements OnInit {
   isNotifierVisible:boolean = false;
   isNotifierLikedVisible:boolean = false;
 
- 
+  
 @ViewChild(MatSort) sort:MatSort;
 @ViewChild(MatPaginator) paginator:MatPaginator;
 
   constructor(public goods_category_data: GoodsCategoryDataService,
     public auth: AuthService,
-    public cartService: CartService) {
-    // this.sortedData = this.goods.slice();
+    public cartService: CartService) { }
+
+  ngOnInit(): void {
+    this.renderComponent();
+    this.auth.isUserLoggedIn = localStorage.getItem('isUserLoggedIn') === "true" ? true : false;
   }
 
-  ngOnInit() {
-   this.renderComponent();
-   this.auth.isUserLoggedIn = localStorage.getItem('isUserLoggedIn') === "true" ? true : false;
-  }
- 
   renderComponent(){
-    this.goods_category_data.getGuestMascaraUrl()
+    this.goods_category_data.getCreamsUrl()
     .subscribe(
       response => {
         this.goods = response;
@@ -66,7 +64,6 @@ export class MascaraNewComponent implements OnInit {
       }
     )
   }
- 
 
   addToCart(element:any){
     this.cartService.addToCart(element);  
@@ -76,6 +73,7 @@ export class MascaraNewComponent implements OnInit {
     this.cartService.addToLiked(element);  
     this.isNotifierLikedVisible = true;
     console.log('liked work');
+    this.isNotifierVisible = true;
   }
 
   notifierHidden(){
@@ -90,5 +88,5 @@ export class MascaraNewComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-}
 
+}
