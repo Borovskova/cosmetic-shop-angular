@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
   public cartItemList:any = [];
+ // public cartItemList:any = JSON.parse(localStorage.getItem('listOfGoodsInCart') || '{}');
   public productList = new BehaviorSubject<any>([]);
 
   public cartItemList2:any = [];
@@ -36,10 +37,13 @@ export class CartService {
 
   addToCart(product:any){
     this.cartItemList.push(product);
+    //this.cartItemList = JSON.parse(localStorage.getItem('listOfGoodsInCart') || '{}');
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    //localStorage.setItem('quantityGoodsInCart', this.cartItemList.length);        
+    //console.log( this.cartItemList);
+    localStorage.setItem('listOfGoodsInCart', JSON.stringify(this.cartItemList));
   }
+
   addToLiked(product:any){
     this.cartItemList2.push(product);
     this.productList2.next(this.cartItemList2);
@@ -62,12 +66,12 @@ export class CartService {
     return grandTotal;
   }
 
-  removeCartItem(product: any){
+  removeCartItem(product: any){   
     this.cartItemList.map((a:any, index:any) => {
       if(product.id === a.id){
         this.cartItemList.splice(index, 1);
-        this.goodsInCart = this.products.length;
-      }
+        this.goodsInCart = this.products.length;      
+      } //console.log('false');   
     })
   }
   removeLikedItem(product: any){
@@ -83,6 +87,7 @@ export class CartService {
     this.cartItemList = [];
     this.goodsInCart = 0;
     this.productList.next(this.cartItemList);
+    //localStorage.removeItem('listOfGoodsInCart');
   }
   removeAllLiked(){
     this.cartItemList2 = [];

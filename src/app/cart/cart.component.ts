@@ -18,6 +18,9 @@ grandTotal !:number;
     this.cartService.getProducts()
     .subscribe(response => {
       this.cartService.products = response;
+      //this.cartService.cartItemList = JSON.parse(localStorage.getItem('listOfGoodsInCart') || '{}');
+      console.log(this.cartService.products);
+      
       this.grandTotal = this.cartService.getTotalPrice(); 
       // this.cartService.goodsInCart =  localStorage.getItem('quantityGoodsInCart'); 
        //this.cartService.products =  localStorage.getItem('productsInCart'); 

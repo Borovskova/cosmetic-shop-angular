@@ -49,7 +49,6 @@ export class SearchService {
   }
 
   storeThemeSelector() {
-    console.log('togle work');
     this.isDarkTheme = !this.isDarkTheme;
     localStorage.setItem('theme', this.isDarkTheme ? "Dark" : "Light");
   }
